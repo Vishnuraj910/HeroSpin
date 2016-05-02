@@ -1,0 +1,43 @@
+
+
+ion-footer-bar a, .row a{
+    width: 100%;
+   font-size: 22px!important;
+    line-height: 50px!important;
+}
+
+.select-page{
+    background-image:url(../../img/init-back.jpg);
+    background-size:cover;
+    background-position-x: 40%;
+}
+
+.centre-content {
+  display: table !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+.centre-content .scroll{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+ 
+
+}
+
+.centre-content .centre-item{
+    background-image:url('../../img/select me.png');
+    background-size:contain;
+     height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin:0 auto;
+}
+
+.abs-top{
+        position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
