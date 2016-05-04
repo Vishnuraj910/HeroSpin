@@ -1,6 +1,6 @@
 ﻿angular.module('HeroSpin.controllers', [])
 .controller("AppCtrl", function ($scope) {
-}).controller("selectCtrl", function ($scope,$state, $ionicModal,DataFactory) { // Inital hero select page controller
+}).controller("selectCtrl", function ($scope, $state, $ionicModal, DataFactory) { // Inital hero select page controller
     $scope.selectedHeroClass = "";
     $scope.myHero = DataFactory.myHero; // Get the saved hero if any 
     $ionicModal.fromTemplateUrl('tmpl/choose.html', { // Select hero modal
@@ -20,7 +20,6 @@
 
 }).controller("listCtrl", function ($scope, $state, DataFactory, $stateParams, $mdToast, $http) { // Main list of movies and tv series
     $scope.selectedHero = $stateParams.hero;
-   
     $scope.movieList = [];
     $scope.movieIndex = 1;
     $scope.totalResults;
@@ -39,28 +38,27 @@
 
     function loadContents(isRand) { // Load data contents for getting random movie and entire movies list
         $scope.imageIcon = "fnt-blue-1 ion-ios-reload "
-        $http.post('http://www.omdbapi.com/?s=' + $scope.titleName + '&page=' + $scope.movieIndex + '&type=movie').then(function (r) {          
+        $http.post('http://www.omdbapi.com/?s=' + $scope.titleName + '&page=' + $scope.movieIndex + '&type=movie').then(function (r) {
             $scope.movieList = $scope.movieList.concat(r.data.Search);
             $scope.totalResults = r.data.totalResults;
             $scope.imageIcon = "ion-ios-play fnt-green-1"
             if (isRand) {
                 $scope.getRandomMovie();
             }
-        }, function (err) {        
-            var toast = $mdToast.simple().content('Internet connectivity problem').action('OK!').highlightAction(true).hideDelay(10000).position('bottom');$mdToast.show(toast).then(function (response) {});
+        }, function (err) {
+            var toast = $mdToast.simple().content('Internet connectivity problem').action('OK!').highlightAction(true).hideDelay(10000).position('bottom'); $mdToast.show(toast).then(function (response) { });
         });
-    
+
     }
 
     $scope.pickNext = function () { // Pick next movie button click
         $scope.movieIndex++; // Add next page contents while taking the random
-        if ($scope.totalResults >= $scope.movieList.length)
-        {
+        if ($scope.totalResults >= $scope.movieList.length) {
             loadContents(true);
         }
     }
 
-    $scope.getRandomMovie = function () {        
+    $scope.getRandomMovie = function () {
         $scope.selectedMovie = $scope.movieList[randomNumber(0, $scope.movieList.length)]
     }
     $scope.doRefresh = function () {
@@ -69,21 +67,21 @@
         $scope.$broadcast('scroll.refreshComplete');
     }
     loadContents(true);
-    
+
     $scope.nextPage = function () { // Pick next movie button click
         $scope.movieIndex++; // Add next page contents while taking the random
-        if ($scope.totalResults > $scope.movieList.length) {
+        if ($scope.totalResults >= $scope.movieList.length) {
             loadContents(false);
         }
         $scope.$broadcast('scroll.infiniteScrollComplete');
     }
     $scope.gotoDetails = function (item) {
-        $state.go('details', { "movieid": item.imdbID,"title":item.Title }, { reload: true });
+        $state.go('details', { "movieid": item.imdbID, "title": item.Title }, { reload: true });
 
     }
 
 
-}).controller("detailCtrl", function ($scope, $stateParams, $mdToast, $ionicHistory, $http) { // Details page controller
+}).controller("detailCtrl", function ($scope, $stateParams, $mdToast, $http) { // Details page controller
     $scope.title = $stateParams.title;
     $scope.movieDetails = {}
     $scope.playThis = function () {
@@ -92,16 +90,8 @@
         // Go to movie player if the video is available
     }
 
-    $scope.goBack = function () {
-        $ionicHistory.backView(); // Page back
-        $ionicHistory.goBack();
-    }
-
-
     $http.post('http://www.omdbapi.com/?i=' + $stateParams.movieid + '&plot=full&r=json').then(function (r) {
-
         $scope.movieDetails = r.data;
-
     }, function (err) {
         var toast = $mdToast.simple().content('Internet connectivity problem').action('OK!').highlightAction(true).hideDelay(10000).position('bottom'); $mdToast.show(toast).then(function (response) { });
     });

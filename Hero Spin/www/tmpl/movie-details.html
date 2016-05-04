@@ -1,21 +1,16 @@
-﻿<ion-view view-title="Know more"  class="list-page det-back" ng-style="{'background-image': 'url(' + movieDetails.Poster + ')'}">
-    <!--<ion-header-bar class="bar bar-header bar-calm">
-        <ion-nav-back-button>
-        </ion-nav-back-button>
-        <div class="list-head title"><h1 class="title">{{title}}</h1></div>
-
-    </ion-header-bar>-->
-    <ion-header-bar class="bar bar-header bar-light light-tran-bg-2">
-        <button class="button button-icon ion-ios-arrow-back fnt-white" ng-click="goBack()"></button>
-
-        <h1 class="title fnt-white det-tit">Know more</h1>
-        <button class="button button-icon fnt-white">{{movieDetails.Released}}</button>
-    </ion-header-bar>
+﻿<ion-view view-title="Know more"  class="list-page det-back" back-img="{{(movieDetails.Poster == 'N/A')?'img/det-back.jpg':movieDetails.Poster}}">
+ 
+        <ion-nav-bar class="bar bar-header bar-calm light-tran-bg-2">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+            <span class="date-header">{{movieDetails.Released}}</span>
+        </ion-nav-bar>
+       
 
     <ion-content class="has-header has-footer" ng-cloak>
         <div class="card animate-in-primary">
             <div class="item item-avatar">
-                <img src="{{movieDetails.Poster}}">
+                <img ng-src="{{movieDetails.Poster}}"  err-src="img/no-poster.png">
                 <h2>{{movieDetails.Title}}</h2>
                 <p>{{movieDetails.Rated}}</p>
                 <p class="f-right">{{movieDetails.Runtime}}</p>
@@ -36,35 +31,35 @@
 
         <div class="list item-icon-left list-inset mar-b-15 animate-in-primary-right">
             
-            <a class="item item-divider item-icon-left" href="#">
+            <span class="item item-divider item-icon-left">
                 <i class="icon ion-ios-film fnt-red-1"></i>
                 Director
-            </a>
+            </span>
             <span class="item item-text-wrap" href="#">
                 {{movieDetails.Director}}
             </span>
-            <a class="item item-divider item-icon-left" href="#">
+            <span class="item item-divider item-icon-left">
                 <i class="icon ion-ios-paper fnt-green-1"></i>
                 Writer
-            </a>
+            </span>
 
-            <span class="item item-text-wrap" href="#">
+            <span class="item item-text-wrap">
                 {{movieDetails.Writer}}
             </span>
-            <a class="item item-divider item-icon-left" href="#">
+            <span class="item item-divider item-icon-left">
                 <i class="icon ion-ios-people fnt-red-2"></i>
                 Actors
-            </a>
+            </span>
 
-            <span class="item" href="#">
+            <span class="item" >
                 {{movieDetails.Actors}}
             </span>
-            <a class="item item-divider item-icon-left" href="#">
+            <span class="item item-divider item-icon-left">
                 <i class="icon ion-bowtie fnt-green-2"></i>
                 Awards
-            </a>
+            </span>
 
-            <span class="item" href="#">
+            <span class="item" >
                 {{movieDetails.Awards}}
             </span>
         </div>

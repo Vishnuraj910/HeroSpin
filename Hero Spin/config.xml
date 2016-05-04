@@ -10,10 +10,13 @@
   <preference name="DisallowOverscroll" value="true" />
   <preference name="android-minSdkVersion" value="16" />
   <preference name="BackupWebStorage" value="none" />
-   <preference name="auto-hide-splash-screen" value="true" />
-  <preference name="splashScreenDelay" value="3000" />
-  <preference name="FadeSplashScreenDuration" value="1.0" />
   <preference name="SplashScreen" value="screen" />
+  <preference name="AutoHideSplashScreen" value="true" />
+  <preference name="SplashScreenDelay" value="5000" />
+  <feature name="SplashScreen">
+    <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+    <param name="onload" value="true" />
+  </feature>
   <feature name="StatusBar">
     <param name="ios-package" onload="true" value="CDVStatusBar" />
   </feature>
@@ -24,12 +27,12 @@
     <icon src="resources/android/icon/drawable-xhdpi-icon.png" density="xhdpi" />
     <icon src="resources/android/icon/drawable-xxhdpi-icon.png" density="xxhdpi" />
     <icon src="resources/android/icon/drawable-xxxhdpi-icon.png" density="xxxhdpi" />
-     <splash src="resources/android/splash/drawable-port-ldpi-screen.png" density="ldpi" />
-    <splash src="resources/android/splash/drawable-port-mdpi-screen.png" density="mdpi" />
-    <splash src="resources/android/splash/drawable-port-hdpi-screen.png" density="hdpi" />
-    <splash src="resources/android/splash/drawable-port-xhdpi-screen.png" density="xhdpi" />
-    <splash src="resources/android/splash/drawable-port-xxhdpi-screen.png" density="xxhdpi" />
-    <splash src="resources/android/splash/drawable-port-xxxhdpi-screen.png" density="xxxhdpi" />
+    <splash src="resources/android/splash/drawable-port-ldpi-screen.png" density="port-ldpi" />
+    <splash src="resources/android/splash/drawable-port-mdpi-screen.png" density="port-mdpi" />
+    <splash src="resources/android/splash/drawable-port-hdpi-screen.png" density="port-hdpi" />
+    <splash src="resources/android/splash/drawable-port-xhdpi-screen.png" density="port-xhdpi" />
+    <splash src="resources/android/splash/drawable-port-xxhdpi-screen.png" density="port-xxhdpi" />
+    <splash src="resources/android/splash/drawable-port-xxxhdpi-screen.png" density="port-xxxhdpi" />
   </platform>
   <preference name="KeepRunning" value="True" />
   <preference name="ShowTitle" value="True" />
@@ -41,4 +44,5 @@
   <plugin name="cordova-plugin-whitelist" spec="~1.2.1" />
   <plugin name="cordova-plugin-statusbar" spec="~2.1.0" />
   <plugin name="ionic-plugin-keyboard" spec="~1.0.8" />
+  <plugin name="cordova-plugin-splashscreen" version="3.1.0" />
 </widget>

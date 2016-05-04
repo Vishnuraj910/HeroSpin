@@ -128,3 +128,12 @@ ion-footer-bar a, .row a{
 .det-back{
     background-image:url('../img/det-back.jpg')
 }
+
+.date-header{
+        position: fixed;
+    right: 0;
+    z-index: 999;
+    margin: 12px;
+    font-size: 15px;
+    color:#fff;
+}

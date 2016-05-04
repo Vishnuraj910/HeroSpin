@@ -48,7 +48,7 @@ angular.module('HeroSpin', ['ionic','ngMaterial', 'ngCordova', 'HeroSpin.control
                         }
                     }
                 }).state('details', {
-                    url: "/details/:movieid/:title",
+                    url: "/list/details/:movieid/:title",
                     views: {
                         'heroContent': {
                             templateUrl: "tmpl/movie-details.html",
