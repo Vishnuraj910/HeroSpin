@@ -2,7 +2,7 @@
 <widget id="com.vishnuraj.herospin" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Hero Spin</name>
   <description>Watch you favourite heros movies in your phone</description>
-  <author email="you@example.com" href="http://example.com.com/">Vishnuraj Rajagopal</author>
+  <author email="vishnuraj910@gmail.com" href="http://vishnurajagopal.com/">Vishnuraj Rajagopal</author>
   <content src="index.html" />
   <access origin="*" />
   <preference name="webviewbounce" value="false" />
