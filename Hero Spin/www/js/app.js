@@ -39,12 +39,28 @@ angular.module('HeroSpin', ['ionic','ngMaterial', 'ngCordova', 'HeroSpin.control
                             controller: "selectCtrl"
                         }
                     }
+                }).state('list', {
+                    url: "/list/:hero",
+                    views: {
+                        'heroContent': {
+                            templateUrl: "tmpl/list.html",
+                            controller: "listCtrl"
+                        }
+                    }
+                }).state('details', {
+                    url: "/details/:movieid/:title",
+                    views: {
+                        'heroContent': {
+                            templateUrl: "tmpl/movie-details.html",
+                            controller: "detailCtrl"
+                        }
+                    }
                 })
-               
+        
                
 
 
-            $urlRouterProvider.otherwise("/select");
+            $urlRouterProvider.otherwise((window.localStorage.getItem("myHero") != null) ? '/list/' + window.localStorage.getItem("myHero") : '/select');
            
         }
 ])

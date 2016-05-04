@@ -7,7 +7,7 @@ ion-footer-bar a, .row a{
 }
 
 .select-page{
-    background-image:url(../../img/init-back.jpg);
+    background-image:url(../img/init-back.jpg);
     background-size:cover;
     background-position-x: 40%;
 }
@@ -15,7 +15,7 @@ ion-footer-bar a, .row a{
 .centre-content {
   display: table !important;
   width: 100% !important;
-  height: 100% !important;
+  height: 100vh !important;
 }
 .centre-content .scroll{
   display: table-cell;
@@ -26,12 +26,28 @@ ion-footer-bar a, .row a{
 }
 
 .centre-content .centre-item{
-    background-image:url('../../img/select me.png');
-    background-size:contain;
-     height: 150px;
+       background-size: contain;
+    height: 150px;
+    background-repeat: no-repeat;
     width: 150px;
     border-radius: 50%;
-    margin:0 auto;
+    background-position-y: 50%;
+    background-position-x: 50%;
+    margin: 10px auto;
+}
+.centre-content .centre-select{
+    background-image:url('../img/select me.png');
+   
+}
+
+.centre-content .centre-bat{
+    background-image:url('../img/bat-logo.png');
+   
+}
+.centre-content .centre-super{
+    background-image:url('../img/super-logo.png');
+    background-position-y: 80%;
+   
 }
 
 .abs-top{
@@ -41,3 +57,74 @@ ion-footer-bar a, .row a{
     top: 0;
 }
 
+.list-page{
+    background-size:cover;
+    background-position-x: 40%;
+}
+
+.super-back{
+        background-image:url(../img/super-back.jpg);
+}
+
+.bat-back{
+        background-image:url(../img/bat-back.jpg);
+            background-position-x: 100%;
+}
+.super-back .list-head img{
+    width:46px;
+}
+.bat-back .list-head img{
+    width:85px;
+}
+.list-head img{
+    height: 100%;
+    margin: 5px;
+}
+.list-head{
+        width: 100vw;
+}
+.sear-icon{
+    top:10px;
+    left: 10px;
+    font-size: 25px;
+}
+.sear-ctr{
+ margin: 0 auto;
+    width: 100%;
+    height: 45px;
+    background-color: rgba(255,255,255,.9);
+    padding-right: 0;
+}
+
+.has-hero-header{
+    top:90px;
+}
+
+.md-card-image{
+    height:200px;
+}
+
+.title-left.det-tit{
+        width: calc(100vw - 80px);
+    margin: 0 auto!important;
+}
+.playbtn{
+         background-color: rgba(0,0,0,.5); 
+         position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+.playbtn span{
+    position: absolute;
+    top: 30%;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    font-size: 100px;
+}
+
+.det-back{
+    background-image:url('../img/det-back.jpg')
+}

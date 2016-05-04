@@ -1,8 +1,13 @@
 <ion-modal-view class="select-page">
-    <ion-header-bar>
+    <ion-header-bar class="bar bar-header bar-calm light-tran-bg">
         <h1 class="title">My SUPER HERO</h1><button class="button button-icon ion-close-circled" ng-click="modal.hide()"></button>
     </ion-header-bar>
-    <ion-content>
-        Hello!
+    <ion-content class="centre-content abs-top">
+        <div class="card centre-item centre-bat animate-in-secondary glow-this" ng-click="chooseHero('bat')">
+
+        </div>
+        <div class="card centre-item centre-super animate-in-primary-right glow-this" ng-click="chooseHero('super')">
+
+        </div>
     </ion-content>
 </ion-modal-view>
