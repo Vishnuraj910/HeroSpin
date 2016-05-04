@@ -63,7 +63,12 @@ ion-footer-bar a, .row a{
 }
 
 .super-back{
-        background-image:url(../img/super-back.jpg);
+    background-image:url(../img/super-back.jpg);
+}
+
+.sear-close-icon{
+        font-size: 20px;
+    margin: 5px;
 }
 
 .bat-back{
@@ -78,7 +83,7 @@ ion-footer-bar a, .row a{
 }
 .list-head img{
     height: 100%;
-    margin: 5px;
+    margin: 1px 5px;
 }
 .list-head{
         width: 100vw;
